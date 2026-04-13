@@ -1,0 +1,97 @@
+/* Configurações Gerais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* Menu Chamativo */
+.menu {
+    background-color: #f5f5f5;
+    padding: 20px;
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+}
+
+.menu ul li {
+    display: inline;
+    margin: 0 20px;
+}
+
+.menu a {
+    text-decoration: none;
+    font-size: 2rem; /* Letra grande */
+    font-weight: bold;
+    color: #5d4037; /* Marrom pastel escuro */
+}
+
+/* Seção Hero */
+.hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #d1e8e2; /* Azul Pastel */
+    text-align: center;
+}
+
+/* PAINEL DESLIZANTE (Split Screen) */
+.split-container {
+    position: relative;
+    display: flex;
+    height: 80vh;
+    overflow: hidden;
+}
+
+.side {
+    width: 50%; /* Divide a tela no meio */
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: width 0.5s ease; /* Efeito de deslizar */
+}
+
+.left-side {
+    background-color: #e2d1c3; /* Marrom Pastel */
+}
+
+.right-side {
+    background-color: #dcedc1; /* Verde Pastel */
+}
+
+/* Interação: Quando passamos o mouse, um lado cresce */
+.split-container:hover .left-side:hover { width: 70%; }
+.split-container:hover .left-side:hover + .right-side { width: 30%; }
+.split-container:hover .right-side:hover { width: 70%; }
+
+/* Responsividade: No celular, as telas ficam uma em cima da outra */
+@media (max-width: 768px) {
+    .split-container {
+        flex-direction: column;
+    }
+    .side {
+        width: 100% !important;
+        height: 50%;
+    }
+    .menu a { font-size: 1.2rem; }
+}
+
+/* Estilo dos Bullets */
+.details {
+    padding: 50px;
+    background-color: #fff;
+}
+
+.card {
+    max-width: 800px;
+    margin: auto;
+    border-left: 10px solid #dcedc1;
+    padding-left: 20px;
+}
+
+.hidden { display: none; color: #5d4037; font-style: italic; margin-top: 10px; }
